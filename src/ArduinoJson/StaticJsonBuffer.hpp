@@ -106,14 +106,14 @@ class StaticJsonBufferBase : public JsonBufferBase<StaticJsonBufferBase> {
 // Implements a JsonBuffer with fixed memory allocation.
 // The template paramenter CAPACITY specifies the capacity of the buffer in
 // bytes.
-template <size_t CAPACITY>
+template <size_t AJCAPACITY>
 class StaticJsonBuffer : public Internals::StaticJsonBufferBase {
  public:
   explicit StaticJsonBuffer()
-      : Internals::StaticJsonBufferBase(_buffer, CAPACITY) {}
+      : Internals::StaticJsonBufferBase(_buffer, AJCAPACITY) {}
 
  private:
-  char _buffer[CAPACITY];
+  char _buffer[AJCAPACITY];
 };
 }  // namespace ArduinoJson
 
